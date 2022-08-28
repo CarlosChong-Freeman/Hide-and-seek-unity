@@ -57,6 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Script/Player/PlayerMovement.cs" />
+    <Compile Include="Assets/Script/Enemy/Enemy.cs" />
+    <Compile Include="Assets/Script/Enemy/EnemyAiTutorial.cs" />
+    <Compile Include="Assets/Script/Tiral_Raycast/RayCast.cs" />
+    <Compile Include="Assets/Script/Tiral_Raycast/Cameraa.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
