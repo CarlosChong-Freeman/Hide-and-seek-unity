@@ -354,6 +354,7 @@
 "Assets/Script/Enemy/Enemy.cs"
 "Assets/Script/Enemy/EnemyAiTutorial.cs"
 "Assets/Script/Player/PlayerMovement.cs"
+"Assets/Script/Player/Player_.cs"
 "Assets/Script/Tiral_Raycast/Cameraa.cs"
 "Assets/Script/Tiral_Raycast/RayCast.cs"
 -langversion:9.0

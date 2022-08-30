@@ -5,41 +5,26 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public NavMeshAgent nav;
-    public GameObject Target;
-    public Bounds bounds;
-
-    bool Flag;
-
-    private void Awake()
-    {
-       
-    }
-
-    // Start is called before the first frame update
+    public float viewDistance = 3;
+    public float viewAngle = 90;
+    public GameObject target;
+    // Use this for initialization
     void Start()
     {
-        
     }
-
     // Update is called once per frame
     void Update()
     {
-        if (!Flag && !nav.hasPath)
+        if (Vector3.Distance(target.transform.position, transform.position) <= viewDistance)
         {
-            Flag = true;
-            RandomPosition();
+            Vector3 dir = target.transform.position - transform.position;
+            float angle = Vector3.Angle(dir, transform.forward);
+            if (angle <= viewAngle / 2)
+            {
+                Debug.Log("视野内");
+            }
         }
     }
-
-    void RandomPosition()
-    {
-        float rx = Random.Range(this.transform.position.x + 5, this.transform.position.x - 5);
-        float rz = Random.Range(this.transform.position.z + 5, this.transform.position.z - 5);
-        Target.transform.position = new Vector3(rx, Target.transform.position.y, rz);
-
-        //this.transform.LookAt(Target.transform);
-        nav.SetDestination(new Vector3(rx, this.transform.position.y, rz));
-        Flag = false;
-    }
 }
+
+    
